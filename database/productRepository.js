@@ -12,10 +12,22 @@ const addOne = async (data) => {
 // Read
 const getMany = async ({limit, sort}) => {
     const productsData = await readData();
-    if (sort === 'asc') {
-        productsData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-    } else if (sort === 'desc') {
-        productsData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    
+    // Handle different sort options
+    if (sort) {
+        if (sort === 'asc' || sort === 'date_asc') {
+            productsData.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        } else if (sort === 'desc' || sort === 'date_desc') {
+            productsData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        } else if (sort === 'price_asc') {
+            productsData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+        } else if (sort === 'price_desc') {
+            productsData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+        } else if (sort === 'name_asc') {
+            productsData.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+        } else if (sort === 'name_desc') {
+            productsData.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
+        }
     }
 
     if (limit) {

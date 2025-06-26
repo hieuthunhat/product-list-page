@@ -5,5 +5,29 @@
             <i class="bi bi-box-seam"></i> Product Management System
         </h1>
         <p class="lead">Manage your products with style and efficiency</p>
+        
+        <!-- Sort Controls -->
+        <div class="mt-4">
+            <div class="dropdown d-inline-block me-3">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-sort-down"></i> Sort Products
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <li><a class="dropdown-item" href="#" data-sort="desc">
+                        <i class="bi bi-arrow-down"></i> Newest First
+                    </a></li>
+                    <li><a class="dropdown-item" href="#" data-sort="asc">
+                        <i class="bi bi-arrow-up"></i> Oldest First
+                    </a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" data-sort="">
+                        <i class="bi bi-shuffle"></i> Default Order
+                    </a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                <i class="bi bi-plus-circle"></i> Add New Product
+            </button>
+        </div>
     </div>
 </section>

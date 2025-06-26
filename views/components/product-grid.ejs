@@ -1,16 +1,28 @@
 <!-- Main Content -->
 <div class="container my-5" id="products">
     <div class="row mb-4">
-        <div class="col-md-8">
-            <h2 class="text-dark">
-                <i class="bi bi-grid-3x3-gap-fill"></i> All Products
-                <span class="badge bg-primary ms-2"><%= products.length %></span>
-            </h2>
-        </div>
-        <div class="col-md-4 text-end">
-            <button class="btn btn-custom btn-lg" data-bs-toggle="modal" data-bs-target="#addProductModal">
-                <i class="bi bi-plus-lg"></i> Add New Product
-            </button>
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <h2 class="text-dark mb-0">
+                    <i class="bi bi-grid-3x3-gap-fill"></i> All Products
+                    <span class="badge bg-primary ms-2"><%= products.length %></span>
+                    <span id="sortStatus" class="badge bg-info ms-2" style="display: none;"></span>
+                </h2>
+                <div class="btn-group" role="group" aria-label="Sort options">
+                    <button type="button" class="btn btn-outline-secondary sort-btn" id="sortPrice" onclick="sortProducts('price')">
+                        <i class="bi bi-sort-numeric-down"></i> Sort by Price
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary sort-btn" id="sortName" onclick="sortProducts('name')">
+                        <i class="bi bi-sort-alpha-down"></i> Sort by Name
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary sort-btn" id="sortDate" onclick="sortProducts('date')">
+                        <i class="bi bi-sort-down"></i> Sort by Date
+                    </button>
+                    <button type="button" class="btn btn-outline-danger" id="clearSort" onclick="clearSort()" style="display: none;">
+                        <i class="bi bi-x-circle"></i> Clear
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 

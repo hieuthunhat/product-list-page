@@ -37,4 +37,69 @@
         transform: translate(-50%, -50%);
         z-index: 9999;
     }
+    .dropdown-toggle {
+        transition: all 0.3s ease;
+    }
+    .dropdown-toggle:hover {
+        transform: translateY(-2px);
+    }
+    #sortStatus {
+        animation: fadeIn 0.3s ease-in;
+    }
+    
+    /* Sort Button Styles */
+    .sort-btn {
+        transition: all 0.3s ease;
+        border-radius: 25px;
+        margin: 0 2px;
+        font-weight: 500;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .sort-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .sort-btn.btn-success {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        border: none;
+        animation: pulse 1s ease-in-out;
+    }
+    
+    .sort-btn.btn-danger {
+        background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+        border: none;
+        animation: pulse 1s ease-in-out;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    #clearSort {
+        transition: all 0.3s ease;
+        border-radius: 25px;
+        animation: slideIn 0.3s ease-in;
+    }
+    
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .btn-group .btn {
+        border-radius: 25px !important;
+        margin: 0 2px;
+    }
+    
+    .btn-group .btn:first-child {
+        border-radius: 25px !important;
+    }
+    
+    .btn-group .btn:last-child {
+        border-radius: 25px !important;
+    }
 </style>
