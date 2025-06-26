@@ -1,0 +1,88 @@
+<!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="addProductModalLabel">
+                    <i class="bi bi-plus-circle"></i> Add New Product
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addProductForm">
+                <div class="modal-body p-4">
+                    <div class="mb-3">
+                        <label for="productName" class="form-label fw-bold">
+                            Product Name <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control" id="productName" name="name" 
+                               placeholder="Enter product name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label fw-bold">
+                            Price <span class="text-danger">*</span>
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="number" class="form-control" id="productPrice" name="price" 
+                                   step="0.01" min="0" placeholder="0.00" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="productCategory" class="form-label fw-bold">
+                            Category <span class="text-danger">*</span>
+                        </label>
+                        <select class="form-select" id="productCategory" name="product" required>
+                            <option value="">Choose category...</option>
+                            <option value="Food & Beverages">Food & Beverages</option>
+                            <option value="Office Supplies">Office Supplies</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Home & Garden">Home & Garden</option>
+                            <option value="Sports & Outdoors">Sports & Outdoors</option>
+                            <option value="Health & Beauty">Health & Beauty</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="productColor" class="form-label fw-bold">Color</label>
+                        <select class="form-select" id="productColor" name="color">
+                            <option value="">Choose color (optional)...</option>
+                            <option value="Red">Red</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Green">Green</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Orange">Orange</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="productImage" class="form-label fw-bold">Image URL</label>
+                        <input type="url" class="form-control" id="productImage" name="image" 
+                               placeholder="https://example.com/image.jpg (optional)">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label fw-bold">Description</label>
+                        <textarea class="form-control" id="productDescription" name="description" 
+                                  rows="3" placeholder="Enter product description (optional)"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-custom">
+                        <i class="bi bi-save"></i> Add Product
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
